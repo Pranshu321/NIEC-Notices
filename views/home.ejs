@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon"
+        href="https://user-images.githubusercontent.com/86917304/186235238-9752ec3e-c7aa-4dc3-8e59-cff21e323180.png"
+        type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notice - Adgitm</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="heading">
+            <span><img src="https://user-images.githubusercontent.com/86917304/186235238-9752ec3e-c7aa-4dc3-8e59-cff21e323180.png" width="80" alt="logo"> </span>
+            <h1 class="heading__title">NIEC - BOARD</h1>
+        </div>
+        <div class="cards">
+            <% for( let i=0; i < links.length; i++ ) { %>
+                <div class="card card-<%= colour %> ">
+                    <h2 class="card__title">
+                        <%= title[i] %>
+                    </h2>
+                    <% if (i<=3) { %>
+                        <h4 style="color: green;  border: 2px solid green; font-weight: 700; font-size: large;"> New!
+                        </h4>
+                        <% } %>
+                            <p class="card__apply">
+                                <a style="font-weight: 900;" class="card__link" href=<%=links[i].link %> >See Notice -> <i
+                                        class="fas fa-arrow-right"></i></a>
+                            </p>
+                </div>
+                <% } %>
+        </div>
+        <footer style="background-color: gainsboro;">
+            <h2 style="text-align: center; margin-top: 40px; padding: 20px 10px; bottom: 0;"><a class="heading__link"
+                    target="_blank" href="https://pranshuportfolio.netlify.app/">Developed & Design
+                    by <strong style="color: black;">Pranshu ( ~ Beluga ~)</strong> With ❤</a></h2>
+        </footer>
+</body>
+
+</html>
