@@ -3,9 +3,8 @@ const cheerio = require('cheerio');
 const app = require('express')();
 const express = require('express');
 
-app.set("view engine", 'ejs');
+app.set("view engine" , 'ejs');
 app.use(express.static('public'));
-
 
 
 let linksarr = [];
@@ -24,10 +23,10 @@ request("https://adgitmdelhi.ac.in/notice/", (err, res, html) => {
     }
 });
 
-app.get('/', (req, res) => {
-    res.render('home', { links: linksarr, title: tilte, colour: Math.floor((Math.random() * 3) + 1) });
+app.get('/' , (req,res)=>{
+    res.render('home' , {links: linksarr , title: tilte , colour: Math.floor((Math.random()*3)+1)});
 });
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(process.env.PORT || 3000 , ()=>{
     console.log("ok");
 });
