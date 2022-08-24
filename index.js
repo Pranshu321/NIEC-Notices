@@ -27,6 +27,6 @@ app.get('/' , (req,res)=>{
     res.render('home' , {links: linksarr , title: tilte , colour: Math.floor((Math.random()*3)+1)});
 });
 
-app.listen(process.env.PORT || 3000 , ()=>{
+app.listen(process.env.PORT || 5500 , ()=>{
     console.log("ok");
 });
