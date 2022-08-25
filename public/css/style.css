@@ -1,148 +1,166 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-      Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-      background: url("https://media.istockphoto.com/photos/dark-gray-and-black-grunge-cement-wall-studio-room-space-product-picture-id1337977426?b=1&k=20&m=1337977426&s=170667a&w=0&h=pXD50PRHzp_VW0Jqc3XVve3lQvKg3d5UnPb8C2urYL4=");
-      background-repeat: no-repeat;
-      background-size: cover;
-  }
-  
-  .main-container {
-    padding: 30px;
-  }
-  
-  /* HEADING */
-  
-  .heading {
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 
-  .heading img{
-    border-radius: 100%;
-  }
-  
-  .heading__title {
-    font-weight: 600;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin-left: 15px;
-    color: white;
-  }
-  
-  .heading__credits {
-    margin: 10px 0px;
-    color: #888888;
-    font-size: 25px;
-    transition: all 0.5s;
-  }
-  
-  .heading__link {
-    text-decoration: none;
-    color: black;
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+		Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	background: url("https://media.istockphoto.com/photos/dark-gray-and-black-grunge-cement-wall-studio-room-space-product-picture-id1337977426?b=1&k=20&m=1337977426&s=170667a&w=0&h=pXD50PRHzp_VW0Jqc3XVve3lQvKg3d5UnPb8C2urYL4=");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 
-  }
-  
-  .heading__credits .heading__link {
-    color: inherit;
-  }
-  
-  /* CARDS */
-  
-  .cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .card {
-    margin: 20px;
-    padding: 20px;
-    width: 400px;
-    min-height: 200px;
-    display: grid;
-    grid-template-rows: 0 30px 1fr 50px;
-    border-radius: 10px;
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
-    transition: all 0.2s;
-  }
-  
-  .card:hover {
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
-    transform: scale(1.01);
-  }
-  
-  .card__link,
-  .card__exit,
-  .card__icon {
-    position: relative;
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.9);
-    padding: 7px 14px;
-    border-radius: 6px;
-    border:2px solid rgba(0, 0, 0, 0.4);
-  }
-  
+.main-container {
+	padding: 30px;
+}
 
-  
- 
-  
-  .card__exit {
-    grid-row: 1/2;
-    justify-self: end;
+/* HEADING */
+
+.heading {
+	text-align: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.heading img {
+	border-radius: 100%;
+}
+
+.heading__title {
+	font-weight: 600;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+	margin-left: 15px;
+	color: white;
+}
+
+.heading__credits {
+	margin: 10px 0px;
+	color: #888888;
+	font-size: 25px;
+	transition: all 0.5s;
+}
+
+.heading__link {
+	text-decoration: none;
+	color: black;
+}
+
+.heading__credits .heading__link {
+	color: inherit;
+}
+
+/* CARDS */
+
+.cards {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.card {
+	margin: 20px;
+	padding: 20px;
+	width: 400px;
+	min-height: 200px;
+	display: grid;
+	grid-template-rows: 0 30px 1fr 50px;
+	border-radius: 10px;
+	box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+	transition: all 0.2s;
+}
+
+.card:hover {
+	box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+	transform: scale(1.01);
+}
+
+.card__link,
+.card__exit,
+.card__icon {
+	position: relative;
+	text-decoration: none;
+	color: rgba(255, 255, 255, 0.9);
+	padding: 7px 14px;
+	border-radius: 6px;
+	border: 2px solid rgba(0, 0, 0, 0.4);
+}
+
+.card__exit {
+	grid-row: 1/2;
+	justify-self: end;
+}
+
+.card__icon {
+	grid-row: 2/3;
+	font-size: 30px;
+}
+
+.card__title {
+	grid-row: 3/4;
+	font-weight: 400;
+	color: #ffffff;
+	font-size: 15px;
+}
+
+.card__apply {
+	grid-row: 4/5;
+	align-self: center;
+}
+
+/* CARD BACKGROUNDS */
+
+.card-1 {
+	background: radial-gradient(#1fe4f5, #3fbafe);
+}
+
+.card-2 {
+	background: radial-gradient(#fbc1cc, #fa99b2);
+}
+
+.card-3 {
+	background: radial-gradient(#76b2fe, #b69efe);
+}
+
+.card-4 {
+	background: radial-gradient(#60efbc, #58d5c9);
+}
+
+.card-5 {
+	background: radial-gradient(#f588d8, #c0a3e5);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1600px) {
+	.cards {
+		justify-content: center;
+	}
+}
+
+.top-btn {
+	font-size: 2.4rem;
+	width: 4rem;
+	height: 4rem;
+	color: #fff;
+	background-color: purple;
+	border-radius: 50%;
+	position: fixed;
+	bottom: 5rem;
+	right: 5rem;
+	z-index: 999;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+@media (min-width: 1600px) {
+  .top-btn {
+    right: 0;
+    left: 40%;
   }
-  
-  .card__icon {
-    grid-row: 2/3;
-    font-size: 30px;
-  }
-  
-  .card__title {
-    grid-row: 3/4;
-    font-weight: 400;
-    color: #ffffff;
-    font-size: 15px;
-  }
-  
-  .card__apply {
-    grid-row: 4/5;
-    align-self: center;
-  }
-  
-  /* CARD BACKGROUNDS */
-  
-  .card-1 {
-    background: radial-gradient(#1fe4f5, #3fbafe);
-  }
-  
-  .card-2 {
-    background: radial-gradient(#fbc1cc, #fa99b2);
-  }
-  
-  .card-3 {
-    background: radial-gradient(#76b2fe, #b69efe);
-  }
-  
-  .card-4 {
-    background: radial-gradient(#60efbc, #58d5c9);
-  }
-  
-  .card-5 {
-    background: radial-gradient(#f588d8, #c0a3e5);
-  }
-  
-  /* RESPONSIVE */
-  
-  @media (max-width: 1600px) {
-    .cards {
-      justify-content: center;
-    }
-  }
-  
+}
