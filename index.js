@@ -3,7 +3,7 @@ const cheerio = require('cheerio');
 const app = require('express')();
 const express = require('express');
 
-app.set("view engine" , 'ejs');
+app.set("view engine", 'ejs');
 app.use(express.static('public'));
 
 
@@ -15,18 +15,20 @@ request("https://adgitmdelhi.ac.in/notice/", (err, res, html) => {
         console.log("Error", err);
     else {
         let $ = cheerio.load(html);
-        let h1s = $(".project-odd>div>h3>a");
+        let h1s = $(".post-content>a");
         for (let i = 0; i < h1s.length; i++) {
-            linksarr.push(h1s[i].attributes[0].value);
-            tilte.push(h1s[i].attributes[1].value)
+            linksarr.push(h1s[i].attribs.href);
+            tilte.push(h1s[i].children[0].data);
         }
+        console.log(h1s[0].attribs.href);
     }
 });
+// console.log(tilte);
 
-app.get('/' , (req,res)=>{
-    res.render('home' , {links: linksarr , title: tilte , colour: Math.floor((Math.random()*3)+1)});
+app.get('/', (req, res) => {
+    res.render('home', { links: linksarr, title: tilte, colour: Math.floor((Math.random() * 3) + 1) });
 });
 
-app.listen(process.env.PORT || 5500 , ()=>{
+app.listen(process.env.PORT || 5500, () => {
     console.log("ok");
 });
