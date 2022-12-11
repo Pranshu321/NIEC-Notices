@@ -1,60 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon"
-        href="https://user-images.githubusercontent.com/86917304/186235238-9752ec3e-c7aa-4dc3-8e59-cff21e323180.png"
-        type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Notice - Adgitm</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/style.css">
+    <title>Niec Notices</title>
 </head>
-
 <body>
-    <div class="main-container">
-        <div class="top-btn" onclick="gototop()" >
-            <i class="fa-solid fa-arrow-up"></i>
+    <div class="container">
+        <div class="top-bar">
+            <h4>Here you can check all notices of ADGITM , Made by Pranshu Jain With ♥</h4>
         </div>
-        <div class="alert alert-danger" id="top" style="text-align: center;" role="alert">
-            <span style="font-weight: 700;">If Notices Not Visible , Please Refresh Website!!</span>
-          </div>
+        <div class="top-btn" onclick="gototop()">
+            <i class="bi bi-arrow-up"></i>
+        </div>
+        <div class="alert">
+            <h3>If Notices Not Visible , Please Refresh Website!!</h3>
+        </div>
         <div class="heading">
-            <span><img src="https://user-images.githubusercontent.com/86917304/186235238-9752ec3e-c7aa-4dc3-8e59-cff21e323180.png" width="80" alt="logo"> </span>
-            <h1 class="heading__title">NIEC - BOARD</h1>
+            <span><img
+                    src="https://user-images.githubusercontent.com/86917304/186235238-9752ec3e-c7aa-4dc3-8e59-cff21e323180.png"
+                    width="80" alt="logo"> </span>
+            <h1 class="heading__title">NIEC<span style="color: #F082AC;">BOARD</span></h1>
+            <a href="https://github.com/Pranshu321/NIEC-Notices" target="_blank" class="git-butt"><i class="bi bi-github"></i></a>
         </div>
-        <div class="cards">
+        <div style="display: flex; flex-direction: row; margin-top: 20px; flex-wrap: wrap; width: 100%; justify-content: space-around;">
             <% for( let i=0; i < links.length; i++ ) { %>
-                <div class="card card-<%= colour %> ">
-                    <h2 class="card__title">
-                        <%= title[i] %>
-                    </h2>
-                    <% if (i<=3) { %>
-                        <h4 style="color: green;  border: 2px solid green; font-weight: 700; font-size: large;"> New!
-                        </h4>
-                        <% } %>
-                            <p class="card__apply">
-                                <a style="font-weight: 900;" class="card__link" href=<%=links[i]%>  >See Notice -> <i
-                                        class="fas fa-arrow-right"></i></a>
-                            </p>
+                <div class="card">
+                    <div class="card-header">
+                        <img src="https://media.istockphoto.com/id/1158269396/vector/hand-holding-megaphone-important-announcement-vector-stock-illustration.jpg?s=612x612&w=0&k=20&c=_My5j_Xl2XA1KTRqSoB0vVA4EFcP83R3oUTPNPmOzec="
+                            alt="rover" />
+                    </div>
+                    <div class="card-body">
+                        <% if (i<=3) { %>
+                            <span class="tag tag-teal" style="background-color: #5dbea3;">New!</span>
+                            <% } %>
+                                <% if(i>3) { %>
+                                    <span class="tag tag-teal">Notice</span>
+                                    <% } %>
+                                        <h4>
+                                            <%= title[i] %>
+                                        </h4>
+                                        <p>
+                                            <button class="butt"><a target="_blank" href=<%=links[i]%>>See
+                                                    Notice</a></button>
+                                        </p>
+                                        <div class="user">
+                                            <img src="https://static.vecteezy.com/system/resources/thumbnails/004/698/190/small/calendar-business-date-time-icon-symbol-hand-drawn-cartoon-art-illustration-vector.jpg"
+                                                alt="user" />
+                                            <div class="user-info">
+                                                <h5>
+                                                    <%=Dates[i]%>
+                                                </h5>
+                                            </div>
+                                        </div>
+                    </div>
                 </div>
                 <% } %>
         </div>
-        <footer style="background-color: gainsboro;">
-            <h2 style="text-align: center; margin-top: 40px; padding: 20px 10px; bottom: 0;"><a class="heading__link"
-                    target="_blank" href="https://pranshuportfolio.netlify.app/">Developed & Design
-                    by <strong style="color: black;">Pranshu ( ~ Beluga ~)</strong> With ❤</a></h2>
-        </footer>
-
-        <script>
-           const gototop = ()=>{
-            window.scrollTo({top: 0 , left: 0 , behavior: "smooth"});
-            console.log("ehd");
-           } 
-        </script>
+    </div>
 </body>
-
+<script>
+    const gototop = () => {
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        console.log("end");
+    } 
+</script>
 </html>

@@ -9,6 +9,7 @@ app.use(express.static('public'));
 
 let linksarr = [];
 let tilte = [];
+let NoticeDate = [];
 request("https://adgitmdelhi.ac.in/notice/", (err, res, html) => {
     linksarr = [];
     if (err)
@@ -16,17 +17,20 @@ request("https://adgitmdelhi.ac.in/notice/", (err, res, html) => {
     else {
         let $ = cheerio.load(html);
         let h1s = $(".post-content>a");
+        let time = $(".post-content>time");
         for (let i = 0; i < h1s.length; i++) {
             linksarr.push(h1s[i].attribs.href);
             tilte.push(h1s[i].children[0].data);
+            NoticeDate.push(time[i].attribs.datetime.slice(0, 10));
         }
-        console.log(h1s[0].attribs.href);
+        console.log(NoticeDate);
     }
 });
 // console.log(tilte);
 
+
 app.get('/', (req, res) => {
-    res.render('home', { links: linksarr, title: tilte, colour: Math.floor((Math.random() * 3) + 1) });
+    res.render('home', { links: linksarr, title: tilte, Dates: NoticeDate });
 });
 
 app.listen(process.env.PORT || 5500, () => {
