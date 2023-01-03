@@ -23,7 +23,7 @@ request("https://adgitmdelhi.ac.in/notice/", (err, res, html) => {
             tilte.push(h1s[i].children[0].data);
             NoticeDate.push(time[i].attribs.datetime.slice(0, 10));
         }
-        console.log(NoticeDate);
+        // console.log(NoticeDate);
     }
 });
 // console.log(tilte);
