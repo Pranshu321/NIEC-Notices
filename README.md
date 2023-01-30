@@ -33,7 +33,17 @@ To get started with the project, follow these steps:
 git clone https://github.com/[username]/niec-notices.git
 ```
 
-1.  Open the `index.html` file in your browser
+2.  Install the dependencies
+
+```
+npm install
+```
+
+3. Run the server
+
+```
+node index.js
+```
 
 Contributing
 ------------
