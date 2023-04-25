@@ -10,30 +10,26 @@ let linksarr = [];
 let tilte = [];
 let NoticeDate = [];
 request("https://adgitmdelhi.ac.in/notice/", (err, res, html) => {
-	linksarr = [];
-	if (err) console.log("Error", err);
-	else {
-		let $ = cheerio.load(html);
-		let h1s = $(".post-content>a");
-		let time = $(".post-content>time");
-		for (let i = 0; i < h1s.length; i++) {
-			linksarr.push(h1s[i].attribs.href);
-			tilte.push(h1s[i].children[0].data);
-			NoticeDate.push(time[i].attribs.datetime.slice(0, 10));
-		}
-		// console.log(NoticeDate);
-	}
+  linksarr = [];
+  if (err) console.log("Error", err);
+  else {
+    let $ = cheerio.load(html);
+    let h1s = $(".post-content>a");
+    let time = $(".post-content>time");
+    for (let i = 0; i < h1s.length; i++) {
+      linksarr.push(h1s[i].attribs.href);
+      tilte.push(h1s[i].children[0].data);
+      NoticeDate.push(time[i].attribs.datetime.slice(0, 10));
+    }
+    // console.log(NoticeDate);
+  }
 });
 // console.log(tilte);
 
 app.get("/", (req, res) => {
-	if (linksarr.length === 0) {
-		window.location.reload();
-	} else {
-		res.render("home", { links: linksarr, title: tilte, Dates: NoticeDate });
-	}
+  res.render("home", { links: linksarr, title: tilte, Dates: NoticeDate });
 });
 
 app.listen(process.env.PORT || 5500, () => {
-	console.log("ok");
+  console.log("ok");
 });
